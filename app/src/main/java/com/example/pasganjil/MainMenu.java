@@ -12,6 +12,7 @@ public class MainMenu extends AppCompatActivity {
 
     CardView menu1;
     CardView menu2;
+    int unicode = 0x2764;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +32,8 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ListDataFavorit.class));
             }
         });
+
     }
+
+
 }

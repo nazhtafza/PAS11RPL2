@@ -10,16 +10,51 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="219dp"
+        android:layout_height="161dp"
         android:background="@drawable/header_bg"
         android:gravity="bottom"
         android:orientation="vertical"
         android:padding="12dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="133dp"
+        android:layout_height="124dp"
+        android:src="@mipmap/vector"
+        android:outlineAmbientShadowColor="@color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Premiere League"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome Fellas"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
 
     </LinearLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,11 +77,12 @@
                 <ImageView
                     android:layout_width="126dp"
                     android:layout_height="116dp"
-                    android:src="@mipmap/inggris" />
+                    android:src="@mipmap/ball" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/articleName"
@@ -62,8 +98,15 @@
                         android:singleLine="true"
                         android:text="Team"
                         android:textColor="#000000"
-                        tools:targetApi="lollipop" />
-                </RelativeLayout>
+                        tools:targetApi="lollipop"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kamu bisa lihat klub disini"
+                        android:padding="10dp"
+                        android:textColor="#404040"/>
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -88,13 +131,15 @@
                 <ImageView
                     android:layout_width="126dp"
                     android:layout_height="116dp"
-                    android:src="@mipmap/inggris" />
+                    android:src="@mipmap/boll" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
+                        android:textStyle="bold"
                         android:id="@+id/articleFavourite"
                         style="@android:style/TextAppearance.Medium"
                         android:layout_width="match_parent"
@@ -109,58 +154,30 @@
                         android:text="Favourite"
                         android:textColor="#000000"
                         tools:targetApi="lollipop" />
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/menu3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginBottom="1dp"
-            app:cardCornerRadius="15dp"
-            app:contentPadding="10dp"
-            app:elevation="30dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="126dp"
-                    android:layout_height="116dp"
-                    android:src="@mipmap/inggris" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/articleschedule"
-                        style="@android:style/TextAppearance.Medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:elevation="3dp"
-                        android:ellipsize="marquee"
-                        android:focusable="true"
-                        android:marqueeRepeatLimit="marquee_forever"
+                        android:text="Cek favoritmu disini"
                         android:padding="10dp"
-                        android:singleLine="true"
-                        android:text="Schedule"
-                        android:textColor="#000000"
-                        tools:targetApi="lollipop" />
-                </RelativeLayout>
+                        android:textColor="#404040"/>
+                </LinearLayout>
 
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAS made with ❤️️"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"/>
+
     </LinearLayout>
-</ScrollView>
+
 
 
 

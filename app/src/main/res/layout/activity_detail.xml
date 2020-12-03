@@ -30,21 +30,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:layout_marginTop="50dp"
-                android:layout_gravity="center"
-                android:id="@+id/txtdeskripsi"
-                android:text="Deskripsi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+             <TextView
+                 android:layout_marginTop="50dp"
+                 android:layout_gravity="center"
+                 android:id="@+id/txtdeskripsi"
+                 android:text="Deskripsi"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="5dp"/>
+
+
 
             <Button
                 android:id="@+id/btnbookmark"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="Bookmark"
+                android:text="save"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"/>
         </LinearLayout>
     </ScrollView>
 

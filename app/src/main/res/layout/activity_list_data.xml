@@ -14,13 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="276dp"
+        android:layout_height="278dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/nodata"/>
+
     <TextView
         android:id="@+id/tvnodata"
+        android:layout_width="wrap_content"
+        android:layout_height="171dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="25sp"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="no data to show"/>
+        android:text="Yah belum ada favoritmu 😭"
+        android:textSize="25sp" />
 
 </LinearLayout>
