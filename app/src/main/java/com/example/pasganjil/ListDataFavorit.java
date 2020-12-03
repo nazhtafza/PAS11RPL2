@@ -21,6 +21,8 @@ public class ListDataFavorit extends AppCompatActivity {
     RealmHelper realmHelper;
     TextView tvnodata;
     RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+
     DataAdapterFavorit adapter;
     List<ModelRealm> DataArrayList; //kit add kan ke adapter
 
@@ -31,12 +33,15 @@ public class ListDataFavorit extends AppCompatActivity {
         setContentView(R.layout.activity_list_data);
         tvnodata = (TextView) findViewById(R.id.tvnodata);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+
         DataArrayList = new ArrayList<>();
         // Setup Realm
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
         DataArrayList = realmHelper.getAllTim();
+
+
         if (DataArrayList.size() == 0){
             tvnodata.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
@@ -47,7 +52,7 @@ public class ListDataFavorit extends AppCompatActivity {
                 @Override
                 public void onClick(int position) {
                     Intent move = new Intent(getApplicationContext(), DetailFavorit.class);
-                    move.putExtra("judul",DataArrayList.get(position).getstrTeam());
+                    move.putExtra("StrTeam",DataArrayList.get(position).getstrTeam());
                     move.putExtra("path",DataArrayList.get(position).getstrTeamBadge());
                     move.putExtra("date",DataArrayList.get(position).getstrLeague());
                     move.putExtra("deskripsi",DataArrayList.get(position).getstrDescriptionEN());

@@ -84,13 +84,14 @@ public class ListData extends AppCompatActivity {
                                 public void onClick(int position) {
                                     Model team = DataArrayList.get(position);
                                     Intent intent = new Intent(getApplicationContext(), Detail.class);
+                                    Log.d("teams",team.getstrTeam());
                                     intent.putExtra("id",team.idTeam);
-                                    intent.putExtra("Team",team.strTeam);
-                                    intent.putExtra("liga",team.strLeague);
+                                    intent.putExtra("Team",team.getstrTeam());
+                                    intent.putExtra("liga",team.getstrLeague());
                                     intent.putExtra("deskripsi",team.strDescriptionEN);
                                     intent.putExtra("poster",team.strTeamBadge);
                                     startActivity(intent);
-                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override

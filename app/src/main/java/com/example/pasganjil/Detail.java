@@ -3,10 +3,12 @@ package com.example.pasganjil;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
@@ -17,7 +19,7 @@ import io.realm.RealmConfiguration;
 public class Detail extends AppCompatActivity {
     Realm realm;
     RealmHelper realmHelper;
-    ModelRealm TimModel;
+    ModelRealm timModel;
 
 
     Bundle extras;
@@ -25,7 +27,7 @@ public class Detail extends AppCompatActivity {
     String liga;
     String deskripsi;
     String poster;
-    String id;
+    int id;
 
     TextView tvjudul;
     ImageView ivposter;
@@ -42,12 +44,13 @@ public class Detail extends AppCompatActivity {
         ivposter = (ImageView) findViewById(R.id.ivposter);
         btnbookmark = (Button) findViewById(R.id.btnbookmark);
 
+
         if (extras != null) {
-            team = extras.getString("judul");
-            id = extras.getString("id");
-            liga = extras.getString("date");
+            team = extras.getString("Team");
+            id = extras.getInt("id");
+            liga = extras.getString("liga");
             deskripsi = extras.getString("deskripsi");
-            poster = extras.getString("path");
+            poster = extras.getString("poster");
             tvjudul.setText(team);
             tvdesc.setText(deskripsi);
             Glide.with(Detail.this)
@@ -56,23 +59,27 @@ public class Detail extends AppCompatActivity {
                     .placeholder(R.mipmap.ic_launcher)
                     .into(ivposter);
             // and get whatever type user account id is
+        }else {
+            Toast.makeText(this, "null", Toast.LENGTH_SHORT).show();
         }
 
         //Set up Realm
         Realm.init(Detail.this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
+
         btnbookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TimModel = new ModelRealm();
-                TimModel.setstrDescriptionEN(deskripsi);
-                TimModel.setstrTeam(team);
-                TimModel.setstrLeague(liga);
-                TimModel.setstrTeamBadge(poster);
+                timModel = new ModelRealm();
+                timModel.setstrDescriptionEN(deskripsi);
+                timModel.setstrTeam(team);
+                timModel.setstrLeague(liga);
+                timModel.setstrTeamBadge(poster);
 
                 realmHelper = new RealmHelper(realm);
-                realmHelper.save(TimModel);
+                realmHelper.save(timModel);
+
 
             }
         });

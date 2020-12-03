@@ -6,7 +6,7 @@ public class Model {
     String strLeague;
     String strTeamBadge;
     String strDescriptionEN;
-    Integer idTeam;
+    int idTeam;
 
     public int getidTeam() {
         return idTeam;

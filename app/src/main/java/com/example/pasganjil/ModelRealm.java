@@ -5,18 +5,18 @@ import io.realm.annotations.PrimaryKey;
 
 public class ModelRealm extends RealmObject {
     @PrimaryKey
+    int idTeam;
     String strTeam;
     String strLeague;
     String strTeamBadge;
     String strDescriptionEN;
-Integer idTeam;
 
 
-    public Integer getidTeam() {
+    public int getidTeam() {
         return idTeam;
     }
 
-    public void setidTeam(Integer id) {
+    public void setidTeam(int id) {
         this.idTeam = id;
     }
 
@@ -53,3 +53,4 @@ Integer idTeam;
         this.strDescriptionEN =  strDescriptionEN;
     }
 }
+

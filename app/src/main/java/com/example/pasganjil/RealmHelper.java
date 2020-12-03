@@ -16,7 +16,7 @@ public class RealmHelper {
     }
 
     // untuk menyimpan data
-    public void save(final ModelRealm TimModel) {
+    public void save(final ModelRealm timModel) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -24,13 +24,13 @@ public class RealmHelper {
                     Log.e("Created", "Database was created");
                     Number currentIdNum = realm.where(ModelRealm.class).max("idTeam");
                     int nextId;
-                    if (currentIdNum == null) {
+                    if (currentIdNum==null) {
                         nextId = 1;
                     } else {
-                        nextId = currentIdNum.intValue() + 1;
+                        nextId = currentIdNum.intValue()+1;
                     }
-                    TimModel.setidTeam(nextId);
-                    ModelRealm model = realm.copyToRealm(TimModel);
+                    timModel.setidTeam(nextId);
+                    ModelRealm modelRealm = realm.copyToRealm(timModel);
                 } else {
                     Log.e("ppppp", "execute: Database not Exist");
                 }
